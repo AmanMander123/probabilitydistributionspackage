@@ -10,9 +10,9 @@ class Gaussian(Distribution):
     Attributes:
             mean (float):  representing the mean value of the distribution
             stdev (float):  representing the standard deviation of the
-                            distribution
+            distribution
             data_list (list of floats): data points extracted from the data
-                                        file
+            file
     """
 
     def __init__(self, mu=0, sigma=1):
