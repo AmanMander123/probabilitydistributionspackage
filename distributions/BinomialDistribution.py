@@ -1,6 +1,6 @@
 import math
 import matplotlib.pyplot as plt
-from .Generaldistribution import Distribution
+from distributions.Generaldistribution import Distribution
 
 class Binomial(Distribution):
     """
@@ -64,6 +64,7 @@ class Binomial(Distribution):
         plt.title('Bar Chart of Data')
         plt.xlabel('Outcome')
         plt.ylabel('Count')
+        plt.show()
 
     def pdf(self, k):
         """
@@ -96,7 +97,6 @@ class Binomial(Distribution):
         plt.title('Distribution of Outcomes')
         plt.ylabel('Probability')
         plt.xlabel('Outcome')
-
         plt.show()
 
         return x, y

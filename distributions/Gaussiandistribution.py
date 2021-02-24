@@ -63,6 +63,7 @@ class Gaussian(Distribution):
         plt.title('Histogram of Data')
         plt.xlabel('Data')
         plt.ylabel('Count')
+        plt.show()
 
     def pdf(self, x):
         """

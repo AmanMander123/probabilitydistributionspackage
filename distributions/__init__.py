@@ -1,2 +1,2 @@
 from .Gaussiandistribution import Gaussian
-from .Binomialdistribution import Binomial
+from .BinomialDistribution import Binomial
