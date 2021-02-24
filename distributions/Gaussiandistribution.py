@@ -116,6 +116,32 @@ class Gaussian(Distribution):
 
         return x, y
 
+    def calculate_confidence_intervals(self, cl):
+        """
+        Function to calculate the confidence intervals
+        :param cl: float representing the confidence level - can only take on
+        the follow values: 0.75, 0.90, 0.95, 0.97, 0.99, 99.9
+        :return: list of floats containing the confidence interval
+        """
+
+        try:
+            assert cl in [0.75, 0.90, 0.95, 0.97, 0.99, 99.9], 'enter a different confidence level'
+        except AssertionError as error:
+            raise
+
+        # map confidence level to z-score
+        z_scores = {0.75: 1.15, 0.90: 1.64, 0.95: 1.96, 0.97: 2.17, 0.99: 2.57, 99.9: 3.29}
+
+        try:
+            self.mean = self.calculate_mean()
+            self.stdev = self.calculate_stdev()
+            ci = [self.mean - z_scores[cl] * self.stdev / math.sqrt(len(self.data)),
+                  self.mean + z_scores[cl] * self.stdev / math.sqrt(len(self.data))]
+        except ZeroDivisionError as e:
+            raise Exception('No data input provided') from e
+        return ci
+
+
     def __add__(self, other):
         """
         Function to add together two Gaussian distributions

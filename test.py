@@ -46,6 +46,17 @@ class TestGaussianClass(unittest.TestCase):
         self.assertEqual(gaussian_sum.mean, 55)
         self.assertEqual(gaussian_sum.stdev, 5)
 
+    def test_confidenceintervals(self):
+        self.assertEqual(self.gaussian.calculate_confidence_intervals(0.95),
+                         [23.205529189316458, 132.97628899250174],
+                         'calculate_confidence_intervals does not give'
+                         'expected result')
+
+        self.assertEqual(self.gaussian.calculate_confidence_intervals(0.99),
+                         [6.123854832188144, 150.05796334963003],
+                         'calculate_confidence_intervals does not give'
+                         'expected result')
+
 class BinomialClass(unittest.TestCase):
 
     def setUp(self):
