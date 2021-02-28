@@ -33,7 +33,7 @@ print(bidist)
 ```
 
 # Installation
-installing using pip:
+Install using pip:
 
 pip install distributionsgeneral
 
@@ -42,8 +42,8 @@ https://pypi.org/project/distributionsgeneral/
 
 # Files
 The main classes are inside the distributions folder.
-- Generaldistributions.py is hte base class
-- Gaussiandistribution.py and BinomialDistribution.py are the subclasses on Generaldistribution.py
+- Generaldistributions.py is the base class
+- Gaussiandistribution.py and BinomialDistribution.py are the subclasses of Generaldistribution.py
 - numbers.txt and numbers_binomial.py are the sample data files
 - tests.py contains unittests for the package
 
